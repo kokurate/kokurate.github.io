@@ -277,6 +277,25 @@ h3.my-profession {
   position: relative;
 }
 
+.home .home-img img {
+  /* hero */
+  /* height: 400px; */
+  height: 330px;
+  margin: auto;
+  border-radius: 5px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.home .home-img img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
 .home-img::before {
   content: "";
   position: absolute;
@@ -284,7 +303,7 @@ h3.my-profession {
   width: 80px;
   border-top: 10px solid var(--skin-color);
   border-left: 10px solid var(--skin-color);
-  left: -20px;
+  left: 20px;
   top: -40px;
 }
 .home-img::after {
@@ -296,14 +315,6 @@ h3.my-profession {
   border-right: 10px solid var(--skin-color);
   right: 20px;
   bottom: -40px;
-}
-
-.home .home-img img {
-  /* hero */
-  /* height: 400px; */
-  height: 330px;
-  margin: auto;
-  border-radius: 5px;
 }
 
 /* About */
@@ -682,12 +693,37 @@ h3.my-profession {
   }
 
   .home .home-info {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 60%;
+    max-width: 60%;
   }
 
+  /* .home .home-img {
+    display: block;
+  } */
+
   .home .home-img {
-    display: none;
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    /* background: red; */
+  }
+
+  .home .home-img img {
+    /* hero */
+    /* height: 400px; */
+    /* height: 50%;
+    width: 50%; */
+    display: flex;
+    margin: auto;
+    border-radius: 5px;
+    /* border-bottom: 10px solid var(--bg-black-50); */
+  }
+
+  .home-img::before,
+  .home-img::after {
+    display: none; /* Menghapus elemen ::before dan ::after */
   }
 }
 
@@ -702,5 +738,30 @@ h3.my-profession {
   .about .about-content .personal-info {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    .main-content {
+      margin-top: 320px;
+    }
+    .home .home-info {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .home .home-img {
+      margin-top: -780px;
+      display: block;
+      max-width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home .home-img img {
+      height: 300px;
+      width: 300px;
+      display: block;
+      border-radius: 50%;
+    }
   }
 }
