@@ -279,8 +279,8 @@ h3.my-profession {
 
 .home .home-img img {
   /* hero */
-  /* height: 400px; */
-  height: 330px;
+  height: 400px;
+  /* height: 330px; */
   margin: auto;
   border-radius: 5px;
   -webkit-filter: grayscale(100%);
