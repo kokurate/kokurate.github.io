@@ -57,9 +57,22 @@ ul {
   display: none !important;
 }
 
+.section.back-section {
+  z-index: 1;
+}
+
 .section.active {
   z-index: 2;
   opacity: 1;
+  animation: slideSection 1s ease;
+}
+@keyframes slideSection {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /* .main-content {

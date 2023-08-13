@@ -26,7 +26,15 @@ for (let i = 0; i < totalNavList; i++) {
   //   console.log(navList[i]);
   const a = navList[i].querySelector("a");
   a.addEventListener("click", function () {
+    for (let i = 0; i < totalSection; i++) {
+      allSection[i].classList.remove("back-section");
+    }
+
     for (let j = 0; j < totalNavList; j++) {
+      if (navList[j].querySelector("a").classList.contains("active")) {
+        // console.log("back-section" + navList[j].querySelector("a"));
+        allSection[j].classList.add("back-section");
+      }
       navList[j].querySelector("a").classList.remove("active");
     }
 
