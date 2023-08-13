@@ -14,9 +14,13 @@ var typed = new Typed(".typing", {
 });
 
 /* ============================ Aside ============================ */
+
+/* ====== Creating the Active Class ====== */
 const nav = document.querySelector(".nav"),
   navList = nav.querySelectorAll("li"),
-  totalNavList = navList.length;
+  totalNavList = navList.length,
+  allSection = document.querySelectorAll(".section"),
+  totalSection = allSection.length;
 
 for (let i = 0; i < totalNavList; i++) {
   //   console.log(navList[i]);
@@ -27,5 +31,17 @@ for (let i = 0; i < totalNavList; i++) {
     }
 
     this.classList.add("active");
+    showSection(this);
   });
+}
+
+function showSection(element) {
+  for (let i = 0; i < totalSection; i++) {
+    allSection[i].classList.remove("active");
+  }
+
+  const target = element.getAttribute("href").split("#")[1];
+  //   target = href[1];
+  //   console.log(target);
+  document.querySelector("#" + target).classList.add("active");
 }
