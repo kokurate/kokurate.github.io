@@ -52,6 +52,7 @@ ul {
   z-index: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: all 0.3s ease;
 }
 .hidden {
   display: none !important;
@@ -164,6 +165,7 @@ ul {
   justify-content: center;
   align-items: center;
   z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .aside .logo {
@@ -207,7 +209,7 @@ ul {
   right: 0;
 }
 
-.aside .nav-toogler {
+.aside .nav-toggler {
   height: 40px;
   width: 45px;
   border: 1px solid var(--bg-black-50);
@@ -220,16 +222,22 @@ ul {
   display: none;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.aside .nav-toogler span {
+.aside .nav-toggler span {
   height: 2px;
   width: 18px;
   background: var(--skin-color);
   display: inline-block;
   position: relative;
 }
-.aside .nav-toogler span::before {
+
+.aside .nav-toggler.open span {
+  background-color: transparent;
+}
+
+.aside .nav-toggler span::before {
   content: "";
   height: 2px;
   width: 18px;
@@ -238,7 +246,13 @@ ul {
   top: -6px;
   left: 0;
 }
-.aside .nav-toogler span::after {
+
+.aside .nav-toggler.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.aside .nav-toggler span::after {
   content: "";
   height: 2px;
   width: 18px;
@@ -246,6 +260,11 @@ ul {
   position: absolute;
   top: 6px;
   left: 0;
+}
+
+.aside .nav-toggler.open span::after {
+  transform: rotate(-45deg);
+  top: 0;
 }
 
 .aside .nav {
@@ -303,6 +322,10 @@ h3.my-profession {
   margin-bottom: 70px;
   font-size: 20px;
   color: var(--text-black-700);
+}
+
+.home-img-width-700 {
+  display: none;
 }
 
 .home .home-img {
@@ -709,8 +732,24 @@ h3.my-profession {
     left: -270px;
   }
 
-  .main-content {
-    padding-left: 0;
+  .aside.open {
+    left: 0;
+  }
+
+  .aside .nav-toggler {
+    display: flex;
+    left: 30px;
+  }
+
+  .aside .nav-toggler.open {
+    left: 300px;
+  }
+  .section {
+    left: 0;
+  }
+
+  .section.open {
+    left: 270px;
   }
 
   .about .about-content .personal-info .info-item p span {
@@ -732,28 +771,23 @@ h3.my-profession {
     max-width: 60%;
   }
 
-  /* .home .home-img {
-    display: block;
-  } */
-
   .home .home-img {
+    display: block;
     flex: 0 0 40%;
     max-width: 40%;
     text-align: center;
     margin: auto;
     position: relative;
-    /* background: red; */
   }
 
   .home .home-img img {
-    /* hero */
-    /* height: 400px; */
-    /* height: 50%;
-    width: 50%; */
+    /* height: 80%;
+    width: 80%; */
     display: flex;
     margin: auto;
     border-radius: 5px;
-    /* border-bottom: 10px solid var(--bg-black-50); */
+    border-bottom: 10px solid var(--skin-color);
+    border-top: 10px solid var(--skin-color);
   }
 
   .home-img::before,
@@ -775,28 +809,46 @@ h3.my-profession {
     max-width: 100%;
   }
 
-  @media (max-width: 700px) {
-    .main-content {
-      margin-top: 320px;
-    }
-    .home .home-info {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
+  /* ========== Image circle ========== */
 
-    .home .home-img {
-      margin-top: -780px;
-      display: block;
-      max-width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
+  .home .home-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 
-    .home .home-img img {
-      height: 300px;
-      width: 300px;
-      display: block;
-      border-radius: 50%;
-    }
+  .home .home-img img {
+    display: none;
+  }
+
+  .home-img-width-700 {
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-img-width-700 img {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    height: 250px;
+    width: 250px;
+    display: block;
+    border-radius: 50%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+
+  .home-img-width-700 img {
+    border: 5px solid var(--skin-color);
+  }
+
+  .home-img-width-700 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
 }
