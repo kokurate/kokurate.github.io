@@ -109,3 +109,61 @@ function asideSectionTogglerBtn() {
     allSection[i].classList.toggle("open");
   }
 }
+
+/* ==================== Portfolio Image Modal ==================== */
+
+// Get all elements with the class '.portfolio-modal-trigger'
+const modalTriggers = document.querySelectorAll(".portfolio-modal-trigger");
+
+// Get all elements with the class '.portfolio-modal'
+const modals = document.querySelectorAll(".portfolio-modal");
+
+// Get all elements with the class '.portfolio-modal-content'
+const modalContents = document.querySelectorAll(".portfolio-modal-content");
+
+// Get all elements with the class '.close'
+const closeBtns = document.querySelectorAll(".close");
+
+// Loop through each modal trigger
+modalTriggers.forEach((trigger, index) => {
+  // Add a click event listener to each trigger
+  trigger.addEventListener("click", () => {
+    // Display the corresponding modal
+    modals[index].style.display = "block";
+
+    // Set the content of the modal
+    modalContents[index].src = trigger.src;
+
+    // Add the 'block' class to the modal
+    modals[index].classList.add("block");
+  });
+});
+
+// Loop through each close button
+closeBtns.forEach((closeBtn, index) => {
+  // Add a click event listener to each close button
+  closeBtn.addEventListener("click", () => {
+    // Close the modal corresponding to the clicked close button
+    closeModal(index);
+  });
+});
+
+// Loop through each modal
+modals.forEach((modal, index) => {
+  // Add a click event listener to each modal
+  modal.addEventListener("click", (event) => {
+    // Close the modal if the clicked area is the modal itself
+    if (event.target === modal) {
+      closeModal(index);
+    }
+  });
+});
+
+// Function to close the modal
+function closeModal(index) {
+  // Hide the corresponding modal
+  modals[index].style.display = "none";
+
+  // Remove the 'block' class from the modal
+  modals[index].classList.remove("block");
+}
