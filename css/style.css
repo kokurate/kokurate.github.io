@@ -650,7 +650,7 @@ h3.my-profession {
   line-height: 25px;
 }
 
-/* Portofolio */
+/* Portfolio */
 
 .portfolio .container {
   padding-bottom: 40px;
@@ -667,7 +667,104 @@ h3.my-profession {
   font-weight: 500;
 }
 
-.portfolio .portfolio-item {
+/* =========== Portfolio new with Hover Start =========== */
+
+.portfolio-col-6 {
+  display: flex;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.portfolio-style {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.portfolio-style .card {
+  float: left;
+  /* padding: 0px; */
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-style .card:hover .caption {
+  opacity: 0.9;
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+}
+.portfolio-style .card:hover img {
+  opacity: 1;
+  transform: translateY(-40px);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+}
+
+.portfolio-style img {
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  z-index: 0;
+  border: 6px solid var(--skin-color);
+  border-bottom: none;
+  border-radius: 2px;
+}
+.portfolio-style .caption {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  top: 300px;
+  /* right: 50px; */
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.portfolio-style img {
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.portfolio-style .blur {
+  background-color: var(--skin-color);
+  height: 300px;
+  width: 512px;
+  z-index: 5;
+  position: absolute;
+}
+
+.portfolio-style .caption-text h1 {
+  width: 512px;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+}
+.portfolio-style .caption-text {
+  z-index: 10;
+  color: #fff;
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  top: 20px;
+  margin: 0 auto;
+}
+
+/* =========== Portfolio new with Hover End =========== */
+
+/* =========== Old Portfolio Design Start =========== */
+/* .portfolio .portfolio-item {
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin-bottom: 30px;
@@ -682,7 +779,9 @@ h3.my-profession {
 .portfolio .portfolio-item-inner .portfolio-img img {
   width: 100%;
   display: block;
-}
+} */
+
+/* =========== Old Portfolio Design End =========== */
 
 /* Contact */
 
@@ -696,8 +795,24 @@ h3.my-profession {
   color: var(--text-black-900);
   text-align: center;
   font-size: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 15px;
 }
+
+.contact .icon-profile {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+.contact .icon-profile a i {
+  /* display: inline-block; */
+  font-size: 40px;
+  color: var(--skin-color);
+  margin-bottom: 80px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 .contact .contact-info-item {
   flex: 0 0 25%;
   max-width: 25%;
