@@ -4,13 +4,21 @@ var typed = new Typed(".typing", {
   strings: [
     "",
     "Learner",
+    "",
     "Cyber Security Enthusiast",
+    "",
     "Web Developer",
+    "",
     "Multimedia Officer",
   ],
   typeSpeed: 100,
   BackSpeed: 60,
   loop: true,
+});
+
+var typed = new Typed(".name", {
+  strings: ["", "Fredrik"],
+  typeSpeed: 250,
 });
 
 /* ============================ Aside ============================ */
