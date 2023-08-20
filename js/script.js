@@ -56,7 +56,7 @@ function removeBackSection() {
   }
 }
 
-function addBackSection(num) {
+function addBackSection(num) {  
   allSection[num].classList.add("back-section");
 }
 
