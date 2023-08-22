@@ -7,6 +7,8 @@ var typed = new Typed(".typing", {
     "",
     "Cyber Security Enthusiast",
     "",
+    "Quality Assurance",
+    "",
     "Web Developer",
     "",
     "Multimedia Officer",
@@ -56,7 +58,7 @@ function removeBackSection() {
   }
 }
 
-function addBackSection(num) {  
+function addBackSection(num) {
   allSection[num].classList.add("back-section");
 }
 

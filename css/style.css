@@ -894,6 +894,64 @@ h3.my-profession {
 }
 /* Anonymous End */
 
+/* Learning Journey Start */
+
+.development {
+  /* border: 2px solid var(--skin-color); */
+  border-bottom: 2px solid var(--skin-color);
+}
+
+h3.development {
+  margin-bottom: 50px;
+}
+
+.development:hover {
+  color: var(--text-black-900);
+  background-color: var(--text-black-700);
+}
+
+.learning-journey-title {
+  color: var(--skin-color);
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.learning-journey-sub-title {
+  color: var(--text-black-900);
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.learning-journey-list {
+  display: flex;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.learning-journey-list:hover {
+  background-color: var(--text-black-900);
+}
+
+.learning-journey-list li a:hover {
+  color: var(--bg-black-900);
+}
+
+.learning-journey-list li::before {
+  color: var(--skin-color);
+  content: "•";
+  font-size: 80px;
+  position: relative;
+  top: 18px;
+}
+
+.learning-journey-list li a {
+  color: var(--skin-color);
+  font-size: 30px;
+  /* margin-top: -55px; */
+}
+
+/* Learning Journey End */
+
 /*  */
 @media (max-width: 1199px) {
   .aside .container {
