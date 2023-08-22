@@ -907,7 +907,7 @@ h3.development {
 
 .development:hover {
   color: var(--text-black-900);
-  background-color: var(--text-black-700);
+  background-color: red;
 }
 
 .learning-journey-title {
