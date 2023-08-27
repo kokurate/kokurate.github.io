@@ -680,6 +680,21 @@ h3.my-profession {
   max-width: 33.33%;
   margin-bottom: 30px;
 }
+
+.portfolio .portfolio-item a {
+  margin-bottom: 5px;
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  color: var(--skin-color);
+}
+
+.portfolio .portfolio-item a:hover {
+  background-color: var(--text-black-700);
+  color: var(--bg-black-900);
+  transition: 0.3s ease-in-out;
+}
+
 .portfolio .portfolio-item-inner:hover {
   transition: 0.1s ease-in-out;
   transform: scale(1.1);
